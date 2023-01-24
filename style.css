@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+}
+.main{
+    background: linear-gradient(135deg,grey,#242424);
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* navbar */
+.navbar{
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navlinks{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.navlinks>a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo{
+    height: 50px;
+}
+
+/* hero section */
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    color: #111111;
+}
+
+.container{
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.greeting{
+    font-size: 24px;
+    margin-bottom: 1rem;
+}
+
+.greeting>span{
+    color: #fff;
+}
+
+.my-name{
+    font-size: 42px;
+    margin-bottom: 0.5rem;
+
+}
+
+.my-work{
+    font-size: 28px;
+    margin-bottom: 2rem;
+}
+
+.my-work>span{
+    color: #fff;
+}
+
+.my-desc{
+    font-size: 18px;
+    width: 50%;
+    margin-bottom: 5rem;
+}
+
+
+.my-photo{
+    height: 500px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-10%,-50%);
+    border-radius: 10px;
+    box-shadow: 4px 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.my-photo:hover{
+    transform: translate(-8%,-50%);
+    box-shadow: -4px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.talk-btn{
+    text-decoration: none;
+    display: block;
+    padding: 8px 16px;
+    color: #242424;
+    background: #fff;
+    border-radius: 8px;
+    width: max-content;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 0 8px rgba(255,255,255,0.5);
+    transition: all 0.2s ease;
+}
+
+.talk-btn:hover{
+    transform: translateY(-4px);
+}
+
+.social-container{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 2rem;
+    margin-top: 2rem;
+    font-weight: 500;  
+    width: 50%;  
+}
+
+.social-media{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icons{
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    display: block;
+}
+
+.social-icons>i{
+    box-shadow: 0 0 5px rgba(255,255,255,0.5);
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.social-icons>i:hover{
+    transform: translateY(-3px);
+}
