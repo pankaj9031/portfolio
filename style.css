@@ -284,6 +284,9 @@ html{
 }
 
 @media screen and (max-width: 650px){
+    .navlinks>a::after{
+        display: none;
+    }
     #closeMenu{
         display: block;
     }
