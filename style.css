@@ -18,6 +18,7 @@ html{
     min-height: 100vh;
     padding: 0 1rem;
     padding-bottom: 2rem;
+    overflow: hidden;
 }
 
 /* navbar */
@@ -220,6 +221,35 @@ html{
     transform: translateY(-3px);
 }
 
+/* intersection animation */
+.hidden-left{
+    opacity: 0;
+    transform: translateX(-50%);
+    filter: blur(5px);
+    transition: all 0.5s ease;
+}
+
+.slide-right{
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+}
+
+.hidden-right{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translate(70%,-50%);
+    transition: all 0.6s ease-in-out;
+    transition-delay: 0.2s;
+}
+
+.slide-left{
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(-10%,-50%);
+}
+
+
 @media screen and (max-width: 800px){
     /* logo */
     .logo{
@@ -275,10 +305,14 @@ html{
         height: 350px;
         transform: translate(-10%,-65%);
     }
-
+    
     .my-photo:hover{
         transform: translate(-8%,-65%);
         box-shadow: -4px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .slide-left{
+        transform: translate(-10%,-65%);
     }
     
 }
@@ -328,6 +362,11 @@ html{
 
 @media screen and (max-width: 630px){
 
+    .navbar{
+        padding: 1rem 0.8rem;
+        padding-left: 0.5rem;
+    } 
+
     .container{
         max-width: 350px;
     }
@@ -359,11 +398,15 @@ html{
 
     }
 
-
     .my-photo:hover{
         transform: translate(-50%,-92%);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
+
+    .slide-left{
+        transform: translate(-50%,-92%);
+    }
+
 
     .photoOverlay{
         display: block;
@@ -380,6 +423,8 @@ html{
 }
 
 @media screen and (max-width: 400px){
+   
+
     .logo{
         height: 40px;
     }
@@ -395,6 +440,20 @@ html{
         transform: translate(-50%,-102%);
     }
 
+    .my-photo:hover{
+        transform: translate(-50%,-102%);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    
+    .slide-left{
+        transform: translate(-50%,-102%);
+    }
+
+    
+
+
+
     .photoOverlay{
         transform: translate(-50%,-102%);
 
@@ -402,9 +461,7 @@ html{
 }
 
 @media screen and (max-width: 350px){
-    .navbar{
-        padding: 1rem 0.8rem;
-    }    
+   
     .logo{
         height: 35px;
     }
@@ -433,6 +490,15 @@ html{
 
     .my-photo{
         height: 335px;
+        transform: translate(-50%,-112%);
+    }
+
+    .my-photo:hover{
+        transform: translate(-50%,-112%);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .slide-left{
         transform: translate(-50%,-112%);
     }
 
