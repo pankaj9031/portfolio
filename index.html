@@ -14,12 +14,18 @@
         <!-- navbar -->
         <nav class="navbar">
             <a href="index.html"><img src="pankaj_logo.png" alt="" class="logo"></a>
-            <div class="navlinks">
+            <div class="navlinks" id="navLinks">
+                <!-- close menu icon -->
+                <i class="fa-solid fa-xmark nav-icon" id="closeMenu"></i>
                 <a href="">PROJECTS</a>
                 <a href="">SERVICES</a>
                 <a href="">ABOUT ME</a>
                 <a href="">RESUME</a>
             </div>
+            <!-- open menu icon -->
+            <i class="fa-solid fa-bars nav-icon" id="openMenu"></i>
+            <!-- overlay to close nav -->
+            <div id="nav-overlay"></div>
         </nav>
 
         <!-- hero section -->
@@ -28,7 +34,10 @@
             <div class="container">
                 <h3 class="greeting">Hello, <span>I'm</span></h3>
                 <h1 class="my-name">Pankaj Kumar</h1>
-                <h3 class="my-work"><span>Web</span> Designer</h3>
+                <h3 class="my-work">
+                    <span class="works">Web</span>
+                    <span>Designer</span>
+                </h3>
                 <p class="my-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores provident aperiam at fuga nostrum.</p>
                 <a href="" class="talk-btn">Let's Talk</a>
 
@@ -44,6 +53,8 @@
 
                 <!-- My photo -->
                 <img src="pankaj.jpeg" alt="" class="my-photo">
+                <!-- photo overlay -->
+                <div class="photoOverlay"></div>
             </div>
         </section>
     </div>

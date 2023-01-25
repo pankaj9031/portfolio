@@ -7,10 +7,17 @@
     font-family: 'Montserrat', sans-serif;
     /* font-family: 'Raleway', sans-serif; */
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
 .main{
     background: linear-gradient(135deg,grey,#242424);
     width: 100%;
     min-height: 100vh;
+    padding: 0 1rem;
+    padding-bottom: 2rem;
 }
 
 /* navbar */
@@ -20,6 +27,9 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    position: relative;
 }
 
 .navlinks{
@@ -27,12 +37,55 @@
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    z-index: 100;
+    transition: all 0.2s ease-in-out;
 }
 
 .navlinks>a{
     display: block;
     text-decoration: none;
     color: #fff;
+    position: relative;
+}
+
+.navlinks>a::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transform: scale(0);
+    box-shadow: 0 0 8px rgba(255,255,255,0.7);
+    transition: all 0.2s ease;
+}
+
+.navlinks>a:hover::after{
+    transform: scale(1);
+}
+
+.navlinks>a:hover{
+    text-shadow: 0 0 6px rgba(255,255,255,0.7);
+}
+
+.nav-icon{
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255,255,255,0.7);
+    cursor: pointer;
+}
+
+#closeMenu{
+    display: none;
+}
+
+#openMenu{
+    display: none;
+}
+
+#nav-overlay{
+    display: none;
 }
 
 .logo{
@@ -44,17 +97,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 3.5rem;
     color: #111111;
 }
 
 .container{
     background: rgba(255,255,255,0.3);
+    width: 95%;
+    max-width: 1000px;
+    margin: auto;
     backdrop-filter: blur(5px);
     border-radius: 20px;
     padding: 2rem;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
     position: relative;
+}
+
+.photoOverlay{
+    display: none;
 }
 
 .greeting{
@@ -77,9 +137,12 @@
     margin-bottom: 2rem;
 }
 
-.my-work>span{
+
+.works{
     color: #fff;
+    position: relative;
 }
+
 
 .my-desc{
     font-size: 18px;
@@ -148,11 +211,231 @@
 }
 
 .social-icons>i{
-    box-shadow: 0 0 5px rgba(255,255,255,0.5);
+    text-shadow: 0 0 8px rgba(255,255,255,0.5);
     display: block;
     transition: all 0.2s ease;
 }
 
 .social-icons>i:hover{
     transform: translateY(-3px);
+}
+
+@media screen and (max-width: 800px){
+    /* logo */
+    .logo{
+        height: 45px;
+    }
+
+    /* hero section */
+    /* greeting */
+    .greeting{
+        font-size: 20px;
+        margin-bottom: 0.5rem;
+    }
+
+    /* my name */
+    .my-name{
+        font-size: 36px;
+        margin-bottom: 0.5rem;
+    
+    }
+
+    /* my work */
+    .my-work{
+        font-size: 24px;
+        margin-bottom: 1.5rem;
+    }
+
+    /* my description */
+    .my-desc{
+        font-size: 16px;
+        width: 50%;
+        margin-bottom: 4rem;
+    }
+
+
+    /* my image */
+    .my-photo{
+        height: 450px;
+    }
+
+    /* let's talk btn */
+    .talk-btn{
+        font-size: 16px;
+    }   
+
+    /* social icons */
+    .social-icons{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .my-photo{
+        height: 350px;
+        transform: translate(-10%,-65%);
+    }
+
+    .my-photo:hover{
+        transform: translate(-8%,-65%);
+        box-shadow: -4px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+}
+
+@media screen and (max-width: 650px){
+    #closeMenu{
+        display: block;
+    }
+
+    #openMenu{
+        display: block;
+    }
+
+    .navlinks{
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.3);
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 1.8rem 3rem;
+        backdrop-filter: blur(5px);
+        gap: 3rem;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.15);
+        transform: scale(0);
+    }
+
+    .navlinks>a{
+        text-shadow: 0 0 8px rgba(255,255,255,0.7);
+    }
+
+    #nav-overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: 99;
+    }
+
+}
+
+@media screen and (max-width: 630px){
+
+    .container{
+        max-width: 350px;
+    }
+
+    .greeting{
+        margin-top: 14rem;
+    }
+
+
+    .my-desc{
+        width: 80%;
+    }
+
+    .social-container{
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .my-photo{
+        top: 50%;
+        right: auto;
+        left: 50%;
+        transform: translate(-50%,-92%);
+        height: 400px;
+        z-index: -10;
+        display: block;
+        box-shadow: 4px -4px 8px rgba(0, 0, 0, 0.3);
+
+    }
+
+
+    .my-photo:hover{
+        transform: translate(-50%,-92%);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .photoOverlay{
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-92%);
+        height: auto;
+        width: auto;
+        border-radius: 10px;
+        background: linear-gradient(rgba(0,0,0,0) 50%,rgba(128, 128, 128, 1));
+        z-index: -9;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .logo{
+        height: 40px;
+    }
+    .container{
+        padding: 2rem 1rem;
+    }
+    .my-name{
+        font-size: 32px;
+    }
+
+    .my-photo{
+        height: 375px;
+        transform: translate(-50%,-102%);
+    }
+
+    .photoOverlay{
+        transform: translate(-50%,-102%);
+
+    }
+}
+
+@media screen and (max-width: 350px){
+    .navbar{
+        padding: 1rem 0.8rem;
+    }    
+    .logo{
+        height: 35px;
+    }
+
+    /* greeting */
+    .greeting{
+        font-size: 18px;
+    }
+
+    /* my name */
+    .my-name{
+        font-size: 28px;
+    
+    }
+
+    /* my work */
+    .my-work{
+        font-size: 22px;
+    }
+
+    /* my description */
+    .my-desc{
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .my-photo{
+        height: 335px;
+        transform: translate(-50%,-112%);
+    }
+
+    .photoOverlay{
+        transform: translate(-50%,-112%);
+
+    }
+
 }
